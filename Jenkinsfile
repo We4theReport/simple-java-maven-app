@@ -31,10 +31,10 @@ pipeline {
         }
         stage('Sonarqube analysis') { 
            steps {
-	       def scannerHome = tool 'SonarScanner 4.0';
-               withSonarQubeEnv('SonarQube') {
-                   sh 'mvn clean package sonar:sonar'
-               } 
+	        def scannerHome = tool 'SonarScanner 4.0';
+                withSonarQubeEnv('SonarQube') {
+                    sh 'mvn clean package sonar:sonar'
+                } 
            }
         }
     }
